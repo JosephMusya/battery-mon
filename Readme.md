@@ -17,7 +17,7 @@ After=network.target
 [Service]
 ExecStart=python3 /path/to/main/py/file
 Restart=always
-User=mucia
+User=YOUR_COMPUTER_USER
 RestartSec=5
 
 [Install]
