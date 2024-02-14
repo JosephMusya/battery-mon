@@ -15,7 +15,7 @@ Description=Battery Monitoring Service
 After=network.target
 
 [Service]
-ExecStart=python3 /home/mucia/Desktop/MyCode/batteryMon/main.py
+ExecStart=python3 /path/to/main/py/file
 Restart=always
 User=mucia
 RestartSec=5
