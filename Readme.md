@@ -5,7 +5,7 @@
 1. Clone the repository
 
 ```
-git clone https://www.github.com/josephmusya/battery-mon
+git clone https://github.com/JosephMusya/battery-mon.git
 ```
 
 2. Create a service file under `/etc/systemd/system/battery_monitor.service`
