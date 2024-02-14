@@ -1,4 +1,4 @@
-# Battery monitoring script/service for HP
+# Battery monitoring script/service for PC
 
 # How to run
 
