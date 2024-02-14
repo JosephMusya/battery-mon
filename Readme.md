@@ -23,7 +23,7 @@ RestartSec=5
 [Install]
 WantedBy=multi-user.target
 ```
-  You can obtain the YOUR_COMPUTER_USER by running the command,
+  You can obtain the `YOUR_COMPUTER_USER` by running the command,
   ```
     whoami
   ```
