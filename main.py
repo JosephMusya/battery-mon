@@ -56,17 +56,20 @@ class BatteryThread(threading.Thread):
         
         time = self.get_time()  
         
-        if percent is MAX_BATT and charging and  not notif_send:
+        if (percent == MAX_BATT) and charging and  (not notif_send):
             s.call(["notify-send", "-u", "critical", "-i", notif_icon, "-a", app_name, f'Battery fully charged - {percent}%', f'Unplug your PC!   {time}',])        
             notif_send = True
             return f'Battery: {percent}% \n{msg} \nTime: {local_time}'
-
-        elif percent < MIN_BATT and not charging and not notif_send:
+        
+        elif (percent == MAX_BATT) and not charging:
+            return
+        
+        elif (percent < MIN_BATT )and not charging and (not notif_send):
             s.call(["notify-send", "-u", "critical", "-i", notif_icon, "-a", app_name, f'Battery critically low - {percent}%', f'Plug in your PC!   {time}',])        
             notif_send = True
             return f'Battery: {percent}% \n{msg} \nTime: {local_time}'
         
-        elif percent >= MIN_BATT and percent < MAX_BATT:
+        elif (percent >= MIN_BATT) and percent < MAX_BATT:
             # s.call(["notify-send", "-u", "critical", "-i", notif_icon, "-a", app_name, f'Battery fully charged - {percent}%', f'Unplug your PC!   {time}',])
             notif_send = False
             return f'Battery: {percent}% \n{msg} \nTime: {local_time}'
